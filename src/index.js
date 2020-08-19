@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import './i18n';
+import { I18nextProvider } from 'react-i18next';
+
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -12,10 +14,12 @@ ReactDOM.render(
 
   <React.StrictMode>
     <Router>
-      <Suspense fallback="hello...">
+      <I18nextProvider >
+        <Suspense fallback="translating...">
 
     <App />
     </Suspense>
+    </I18nextProvider>
     </Router>
 
   </React.StrictMode>,
